@@ -1,0 +1,135 @@
+<!-- PÁGINA PARA VISUALIZAR TODAS LAS COMPRAS -->
+
+
+
+
+
+
+<!-- HERENCIA DE TEMPLATES: padre.html -->
+{% extends "AppBookeria/padre.html" %}
+{% load static %}
+
+
+
+<!-- BLOQUE VENTANA (cambiar título de la ventana) -->
+{% block ventana %}
+    Lista compras
+{% endblock %}
+
+
+
+
+<!-- BLOQUE TITLE (cambiar título de la página) -->
+{% block title %}
+
+
+<!-- Contenedor: Título de la página (encabezado) -->
+<div class="bg-black bg-opacity-70 p-12 mb-5 text-center">
+    <h1 class="text-white text-5xl tm-logo-font mb-5">
+        Todas las compras
+    </h1>
+
+</div>
+
+
+<!-- Contenedor: Link Explorar para acceder a la sección más rápido -->
+<div class="text-center">
+
+
+    <!-- Sub contenedor -->
+    <div class="inline-block">
+
+        <!-- Link -->
+        <a href="#menu" class="flex justify-center items-center bg-black bg-opacity-70 py-6 px-8 rounded-lg font-semibold tm-text-2xl tm-text-gold hover:text-gray-200 transition">
+            <i class="fas mr-3"></i>
+            <span>Explorar...</span>                        
+        </a>
+
+    </div>   
+
+</div> 
+{% endblock %}
+<!-- --------------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- BLOQUE SECTION1 (sección después del navbar) -->
+{% block section1 %}
+
+
+<!-- Contenedor pincipal: LISTADO DE USUARIOS -->
+<div id="menu" class=" py-1" data-parallax="scroll" data-image-src="{% static 'AppBookeria/img/libdiv02.png' %}">
+
+    <!-- Sub contenedor -->
+    <div class="container mx-auto py-24 sm:py-48" style="width: 800em; color: white;">
+
+        <!-- Sub contenedor: LISTADO DE LIBROS -->
+        <div class="mb-16 px-4 bg-white py-4 rounded-md">
+
+            <!-- Título -->
+            <h1 class="px-4 text-4xl tm-text-brown font-semibold" style="text-decoration: underline #544639;">
+                Todas las compras registradas en el sistema
+            </h1>
+
+            <!-- Párrafo: listado -->
+            {% for c in compras %}
+                <p class="tm-text-brown text-xl py-2 mt-5 font-normal" style="border-bottom: 1px solid #544639;">
+                    <b>Usuario:</b> <u>{{c.usuario}}</u>
+
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+                    <b> Fecha de pago:</b> {{c.fecha}}
+
+                    
+                    <br> <br>
+                    
+                    <b>Libro:</b> {{c.libro}}
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                    
+                    <b>Oferta:</b> {{c.oferta}}
+
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+                    <b>M&eacute;todo de pago:</b> {{c.pago}}
+                    
+                    <br>
+                    
+                    <b>Precio final:</b> {{c.precio}}
+                    
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                </p>
+            {% endfor %}
+            
+        </div>
+        <!-- /Sub contenedor: LISTADO -->
+
+
+        
+
+        <!-- Sub contenedor: link ir al principio -->
+        <div class="text-center text-3xl">
+            <a href="#intro" class="bg-white py-6 inline-block rounded-md books"
+                style="background-color: rgba(0,0,0,0.7); color: #cc9966; padding: 0.5em 0.9em; cursor: pointer;">
+                Ir al principio...
+            </a>
+        </div>
+
+        
+    </div>
+    <!-- /Sub_contenedor -->
+
+
+</div>
+<!-- /Contenedor principal -->
+
+
+{% endblock %}

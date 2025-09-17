@@ -1,0 +1,71 @@
+<!-- PÁGINA PARA BUSCAR COMPRAS POR USUARIO (base de datos) -->
+
+
+
+
+
+
+<!-- HERENCIA DE TEMPLATES: padre.html -->
+{% extends "AppBookeria/padre.html" %}
+
+{% load static %} <!-- necesario para cargar archivos estáticos como css, imágenes, etc -->
+
+
+<!-- BLOQUE VENTANA (cambiar título de la ventana) -->
+{% block ventana %}
+    B&uacute;squeda compras
+{% endblock %}
+
+
+
+<!-- BLOQUE TITLE (cambiar título de la página) -->
+{% block title %}
+
+<!-- Contenedor: TÍTULO DE LA PÁGINA (encabezado) -->
+<div class="bg-black bg-opacity-70 p-12 mb-5 text-center">
+
+    <!-- Título -->
+    <h1 class="text-white text-5xl tm-logo-font mb-5">
+        Buscar compras por usuario
+    </h1>
+
+    <!-- Párrafo con link -->
+    <p class="text-white leading-8 text-sm font-light">
+        ¿Quieres registrar una compra? Haz clic
+        <a rel="nofollow" href="{% url 'RegistrarCompra' %}">aqu&iacute;</a>
+    </p>
+    
+</div>
+
+
+
+
+<!-- Contenedor: formulario para buscar libros -->
+<div class="flex-1 rounded-xl p-12 pb-14 m-5 bg-black bg-opacity-70 tm-item-container mx-auto">
+
+
+    <p class="tm-text-gold leading-8 text-sm font-medium">
+        (Puede ser una letra, una palabra o frase)
+    </p>
+
+    <!-- Formulario -->
+    <form action="" method="POST" class="text-lg">
+
+        {% csrf_token %}
+
+        <!-- Entrada de usuario -->
+        <input type="text" name="usuario" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Usuario"/>
+
+
+        <!-- Contenedor: "Botón" Buscar -->
+        <div class="text-right">
+
+            <!-- Input de envío de datos -->
+            <input type="submit" value="Buscar" class="text-right text-white hover:text-yellow-500 transition" style="background-color: rgba(0,0,0,0.0); cursor: pointer;">   
+        </div>
+        
+    </form>
+    
+</div>
+{% endblock %}
+<!-- --------------------------------------- -->

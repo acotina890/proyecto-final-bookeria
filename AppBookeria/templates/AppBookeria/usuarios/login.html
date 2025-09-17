@@ -1,0 +1,75 @@
+<!-- PÁGINA PARA INICIAR SESIÓN (en fase de desarrollo) -->
+
+
+
+
+
+
+<!-- HERENCIA DE TEMPLATES: padre.html -->
+{% extends "AppBookeria/padre.html" %}
+
+{% load static %} <!-- necesario para cargar archivos estáticos como css, imágenes, etc -->
+
+
+
+
+<!-- BLOQUE VENTANA (cambiar título de la ventana) -->
+{% block ventana %}
+    Login
+{% endblock %}
+
+
+
+
+<!-- BLOQUE TITLE (cambiar título de la página) -->
+{% block title %}
+
+<!-- Contenedor: TÍTULO DE LA PÁGINA (encabezado) -->
+<div class="bg-black bg-opacity-70 p-12 mb-5 text-center">
+
+    <!-- Título -->
+    <h1 class="text-white text-5xl tm-logo-font mb-5">
+        Iniciar sesi&oacute;n
+    </h1>
+
+    <!-- Párrafo con link -->
+    <p class="text-white leading-8 text-sm font-light">
+        Este sistema aun sigue en desarrollo, por lo que el formulario no mostrar&aacute; alg&uacute;n resultado. Atentos a nuevos cambios.
+
+        <br> <br>
+
+        ¿Eres nuevo o no tienes un usuario? Reg&iacute;strate
+        <a rel="nofollow" href="{% url 'RegistroUsuario' %}">aqu&iacute;</a>
+    </p>
+
+</div>
+
+
+
+
+<!-- Contenedor: FORMULARIO PARA INICIAR SESIÓN EN EL SISTEMA -->
+<div class="flex-1 rounded-xl p-12 pb-14 m-5 bg-black bg-opacity-70 tm-item-container">
+
+    <!-- Formulario de ingreso -->
+    <form action="" method="" class="text-lg">
+
+
+        <!-- Entrada de correo -->
+        <input type="email" name="email" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Correo"/>
+        
+        <!-- Entrada de contraseña -->
+        <input type="password" name="pwd" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Contrase&ntilde;a"/>
+
+
+        <!-- Contenedor: "Botón" Ingresar -->
+        <div class="text-right">
+
+            <!-- Input de envío de datos -->
+            <input type="submit" value="Ingresar" class="text-right text-white hover:text-yellow-500 transition" style="background-color: rgba(0,0,0,0.0); cursor: pointer;">   
+        </div>
+        
+    </form>
+    
+</div>
+
+{% endblock %}

@@ -1,0 +1,107 @@
+<!-- PÁGINA PARA VISUALIZAR RESULTADOS DE UNA BÚSQUEDA (compras) -->
+
+
+
+
+
+
+<!-- HERENCIA DE TEMPLATES: padre.html -->
+{% extends "AppBookeria/padre.html" %}
+{% load static %}
+
+
+
+<!-- BLOQUE VENTANA (cambiar título de la ventana) -->
+{% block ventana %}
+    Resultado b&uacute;squeda compra
+{% endblock %}
+
+
+
+
+<!-- BLOQUE TITLE (cambiar título de la página) -->
+{% block title %}
+
+<!-- Contenedor: TÍTULO DE LA PÁGINA (encabezado) -->
+<div class="bg-black bg-opacity-70 p-12 mb-5 text-center">
+
+
+    <!-- Título -->
+    <h1 class="text-white text-5xl tm-logo-font mb-5">
+        Resultado b&uacute;squeda (compras)
+    </h1>
+
+    
+</div>
+
+
+
+<!-- Contenedor: Link Explorar para acceder a la sección más rápido -->
+<div class="text-center">
+
+    <!-- Sub contenedor -->
+    <div class="inline-block">
+
+        <!-- Link -->
+        <a href="#menu" class="flex justify-center items-center bg-black bg-opacity-70 py-6 px-8 rounded-lg font-semibold tm-text-2xl tm-text-gold hover:text-gray-200 transition">
+            <i class="fas mr-3"></i>
+            <span>Explorar...</span>                        
+        </a>
+
+    </div>   
+
+</div> 
+{% endblock %}
+<!-- --------------------------------------- -->
+
+
+
+
+
+
+
+<!-- BLOQUE SECTION1 (sección después del "header") -->
+{% block section1 %}
+
+<!-- Contenedor pincipal: LISTADO DE OFERTAS -->
+<div id="menu" class=" py-1" data-parallax="scroll" data-image-src="{% static 'AppBookeria/img/libdiv01.png' %}">
+
+    <!-- Sub_contenedor -->
+    <div class="container mx-auto py-24 sm:py-48" style="width: 800em; color: white;">
+
+
+        <!-- Sub contenedor: LISTADO DE LIBROS -->
+        <div class="mb-16 px-4 bg-white py-2 rounded-md">
+
+            <!-- Título -->
+            <h1 class="px-4 text-4xl tm-text-brown font-semibold text-center" style="text-decoration: underline #544639;">
+                Compras realizadas por el usuario buscado
+            </h1>
+
+            <!-- Párrafo: listado -->
+            {% for compra in compras %}
+            
+                <p class="tm-text-brown text-xl py-2 mt-5 font-normal" style="background-color: white; padding-left: 0.9em; padding-right: 0.9em; border-bottom: 1px solid #544639; padding-bottom: 0;">
+                    <b> Usuario: </b> {{compra.usuario}} <br> <br>
+                    <b> Fecha: </b> <u> {{compra.fecha}} </u> <br>
+                    <b> Libro: </b> {{compra.libro}} <br>
+                    <b> Precio: </b> {{compra.precio}} <br>
+                    <b> M&eacute;todo de pago: </b> {{compra.pago}}
+                </p>
+
+            {% endfor %}
+        </div>
+        <!-- /Sub contenedor: LISTADO -->
+
+        
+    </div>
+    <!-- /Sub_contenedor -->
+
+</div>
+<!-- /Contenedor principal -->
+
+
+
+<!-- ........................................................agregar un link para ir al top -->
+
+{% endblock %}

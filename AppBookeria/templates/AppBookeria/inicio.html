@@ -1,0 +1,799 @@
+<!-- PÁGINA INICIO, PRINCIPAL -->
+
+
+
+
+
+
+<!-- HERENCIA DE TEMPLATES: padre.html -->
+{% extends "AppBookeria/padre.html" %}
+
+{% load static %} <!-- necesario para cargar archivos estáticos como css, imágenes, etc -->
+
+
+
+<!-- BLOQUE VENTANA (cambiar título de la ventana) -->
+{% block ventana %}
+    Bookeria
+{% endblock %}
+
+
+
+
+
+<!-- BLOQUE TITLE (cambiar título de la página) -->
+{% block title %}
+
+<!-- Contenedor: TÍTULO DE LA PÁGINA (encabezado) -->
+<div class="bg-black bg-opacity-70 p-12 mb-5 text-center">
+
+    <!-- Título -->
+    <h1 class="text-white text-5xl tm-logo-font mb-5">
+        Bookeria
+    </h1>
+
+    <!-- Párrafo -->
+    <p class="tm-text-gold tm-text-2xl">
+        tu potenciador diario de calma <br>
+    </p>
+
+</div>
+
+
+
+
+
+<!-- Contenedor: párrafo introductorio a la página -->
+<div class="bg-black bg-opacity-70 p-10 mb-5">
+
+    <!-- Párrafo con link -->
+    <p class="text-white leading-8 text-sm font-light">
+        Esta es una librer&iacute;a con art&iacute;culos a un precio econ&oacute;mico.
+        <a rel="nofollow" href="#contact">Env&iacute;anos un mensaje</a>
+    </p>
+
+</div>
+
+
+
+
+
+
+<!-- Contenedor: Link Explorar para acceder a la sección más rápido -->>
+<div class="text-center">
+
+    <!-- Sub_contenedor -->
+    <div class="inline-block">
+
+        <!-- Link acceso a la primera sección -->
+        <a href="#menu" class="flex justify-center items-center bg-black bg-opacity-70 py-6 px-8 rounded-lg font-semibold tm-text-2xl tm-text-gold hover:text-gray-200 transition">
+            <i class="fas mr-3"></i>
+            <span>Explorar...</span>                        
+        </a>
+
+    </div>   
+
+</div> 
+{% endblock %}
+<!-- --------------------------------------- -->
+
+
+
+
+
+
+
+<!-- BLOQUE SECTION1 (sección header) -->
+{% block section1 %}
+
+
+<!-- Primera sección: libros -->
+<div id="menu" class="parallax-window" data-parallax="scroll"
+    data-image-src="{% static 'AppBookeria/img/fondo01.png' %}">
+
+
+    <!-- (Contenedor Libros) -->
+    <div class="container mx-auto tm-container py-24 sm:py-48">
+
+        <!-- sub contenedor -->
+        <div class="text-center mb-16">
+
+            <!-- cuadro blanco segunda sección -->
+            <h2 class="bg-white tm-text-brown py-6 px-12 text-4xl font-medium inline-block rounded-md">
+                Libros Principales
+            </h2>
+
+        </div>
+
+
+        <!-- Sub contenedor: tarjetas -->
+        <div class="flex flex-col lg:flex-row justify-around items-center">
+
+            <!-- 1[Contenedor]: "Tarjeta" Libros -->
+            <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 tm-bg-brown tm-item-container">
+
+                <!-- Contenedor 1: PRIMER LIBRO -->
+                <div class="flex items-start mb-6 tm-menu-item">
+
+
+                    <!-- Imagen PRIMER LIBRO -->
+                    <img src="{% static 'AppBookeria/img/b-harrypotter.png' %}" alt="Image" class="rounded-md">
+
+
+
+                    <!-- contenedor: Detalle Primer Libro -->
+                    <div class="ml-3 sm:ml-6">
+
+                        <!-- Título del libro -->
+                        <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">
+                            HARRY POTTER y las reliquias de la muerte (Justicia)
+                        </h3>
+                        <!-- /Título del libro -->
+
+
+
+                        <!-- descripción del libro -->
+                        <div class="text-white text-md sm:text-lg font-light mb-1">
+                            <p>
+                                J.K. Rowling <br>
+                                Precio: $6000 ARS
+                            </p>
+                        </div>
+                        <!-- /descripción del libro -->
+
+
+
+                        <!-- contenedor: "Botón" (link) Comprar -->
+                        <div class="" style="margin-top: 0.5em; color: white;">
+                            <a href="{% url 'Comprar1' %}" class="linkear"
+                                style="background-color: #ca8642; padding: 0.5em;">
+                                Comprar
+                            </a>
+                        </div>
+                        <!-- /contenedor: "Botón" Comprar -->
+
+                    </div>
+                    <!-- /contenedor: Detalle Primer Libro -->
+
+                </div>
+                <!-- /Contenedor 1: PRIMER LIBRO -->
+
+
+
+
+                <!-- Contenedor 2: SEGUNDO LIBRO -->
+                <div class="flex items-start mb-6 tm-menu-item">
+
+
+                    <!-- Imagen Segundo Libro -->
+                    <img src="{% static 'AppBookeria/img/2byung.png' %}" alt="Image" class="rounded-md">
+
+                    <!-- contenedor: Detalle Segundo Libro -->
+                    <div class="ml-3 sm:ml-6">
+
+                        <!-- Título Segundo Libro -->
+                        <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">
+                            LA CRISIS DE LA NARRACI&Oacute;N
+                        </h3>
+
+
+                        <!-- c1 descripcion: autor Segundo Libro -->
+                        <div class="text-white text-md sm:text-lg font-light mb-1">
+                            Byung-Chul Han
+                        </div>
+
+
+
+                        <!-- c2 descripcion: precio Segundo Libro -->
+                        <div class="text-white text-md sm:text-lg font-light">
+                            Precio: $4900 ARS
+                        </div>
+
+
+                        <!-- contenedor: "Botón" Comprar -->
+                        <div class="" style="margin-top: 0.5em; color: white;">
+                            <a href="{% url 'Comprar2' %}" class="linkear"
+                                style="background-color: #ca8642; padding: 0.5em;">
+                                Comprar
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- /contendor: Detalle Segundo Libro -->
+
+                </div>
+                <!-- /Contenedor 2: SEGUNDO LIBRO -->
+
+
+
+
+                <!-- Contenedor 3: TERCER LIBRO -->
+                <div class="flex items-start mb-6 tm-menu-item">
+
+                    <!-- Imagen Tercer Libro -->
+                    <img src="{% static 'AppBookeria/img/3besada.png' %}" alt="Image" class="rounded-md">
+
+
+                    <!-- contenedor: Detalle Tercer Libro -->
+                    <div class="ml-3 sm:ml-6">
+
+
+                        <!-- Título Tercer Libro -->
+                        <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">
+                            BOCABESADA
+                        </h3>
+
+
+                        <!-- c1 descripcion: autor Tercer Libro -->
+                        <div class="text-white text-md sm:text-lg font-light mb-1">
+                            Juan Del Val
+                        </div>
+
+                        <!-- c2 descripcion: precio Tercer Libro -->
+                        <div class="text-white text-md sm:text-lg font-light">
+                            Precio: $5900 ARS
+                        </div>
+
+
+                        <!-- contenedor: "Botón" Comprar -->
+                        <div class="" style="margin-top: 0.5em; color: white;">
+                            <a href="{% url 'Comprar3' %}" class="linkear"
+                                style="background-color: #ca8642; padding: 0.5em;">
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /contenedor: Detalle Cuarto Libro -->
+
+                </div>
+                <!-- /Contenedor 3: TERCER LIBRO -->
+
+
+
+
+                <!-- Contenedor 4: CUARTO LIBRO -->
+                <div class="flex items-start mb-6 tm-menu-item">
+
+                    <!-- Imagen Cuarto Libro -->
+                    <img src="{% static 'AppBookeria/img/4mola.png' %}" alt="Image" class="rounded-md">
+
+                    <!-- contenedor: Detalle Cuarto Libro -->
+                    <div class="ml-3 sm:ml-6">
+
+                        <!-- Título Cuarto Libro -->
+                        <h3 class="text-lg sm:text-xl tm-text-yellow mb-1">
+                            LA REGLA MOLA (si sabes c&oacute;mo funciona)
+                        </h3>
+
+                        <!-- c1 descripcion: autor Cuarto Libro -->
+                        <div class="text-white text-md sm:text-lg font-light">
+                            Ana Salvia, Cristina Torron
+                        </div>
+
+                        <!-- c2 descripcion: precio Cuarto Libro -->
+                        <div class="text-white text-md sm:text-lg font-light">
+                            Precio: $5900 ARS
+                        </div>
+
+
+                        <!-- contenedor: "Botón" Comprar -->
+                        <div class="" style="margin-top: 0.5em; color: white;">
+                            <a href="{% url 'Comprar4' %}" class="linkear"
+                                style="background-color: #ca8642; padding: 0.5em;">
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /contenedor: Detalle Cuarto Libro -->
+
+                </div>
+                <!-- /Contenedor 4: CUARTO LIBRO -->
+
+            </div>
+            <!-- /1[Contenedor]: "Tarjeta" Libros -->
+
+
+
+
+            <!-- 2[Contenedor]: "Tarjeta" Libros -->
+            <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 tm-bg-brown tm-item-container">
+
+                <!-- Contenedor 1: QUINTO LIBRO -->
+                <div class="flex items-start justify-end mb-6 tm-menu-item-2">
+
+                    <!-- contenedor: Detalle Quinto Libro -->
+                    <div class="text-right mr-6">
+
+                        <!-- Título Quinto Libro -->
+                        <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">
+                            THE WALKING DEAD (vol.15)
+                        </h3>
+
+                        <!-- c1 descripcion: autor Quinto Libro -->
+                        <div class="text-white text-md sm:text-lg font-light mb-1">
+                            Robert Kirkman
+                        </div>
+
+                        <!-- c2 descripcion: precio Quinto Libro -->
+                        <div class="text-white text-md sm:text-lg font-light">
+                            Precio: $1900 ARS
+                        </div>
+
+
+                        <!-- contenedor: "Botón" Comprar -->
+                        <div class="" style="margin-top: 0.5em; color: white;">
+                            <a href="{% url 'Comprar5' %}" class="linkear" style="background-color: #ca8642; padding: 0.5em;">
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Imagen Quinto Libro -->
+                    <img src="{% static 'AppBookeria/img/5walking.png' %}" alt="Image" class="rounded-md">
+
+                </div>
+                <!-- /Contenedor 1: QUINTO LIBRO -->
+
+
+
+
+                <!-- Contenedor 2: SEXTO LIBRO -->
+                <div class="flex items-start justify-end mb-6 tm-menu-item-2">
+
+                    <!-- contenedor: Detalle Sexto Libro -->
+                    <div class="text-right mr-6">
+
+
+                        <!-- Título Sexto Libro -->
+                        <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">
+                            EL PRINCIPITO
+                        </h3>
+
+
+
+                        <!-- c1 descripcion: autor Sexto Libro -->
+                        <div class="text-white text-md sm:text-lg font-light mb-1">
+                            Antoine de Saint Exupery
+                        </div>
+
+                        <!-- c2 descripcion: precio Sexto Libro -->
+                        <div class="text-white text-md sm:text-lg font-light">
+                            Precio: $2000 ARS
+                        </div>
+
+
+                        <!-- contenedor: "Botón" Comprar -->
+                        <div class="" style="margin-top: 0.5em; color: white;">
+                            <a href="{% url 'Comprar6' %}" class="linkear" style="background-color: #ca8642; padding: 0.5em;">
+                                Comprar
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- /contenedor: Detalle Sexto Libro -->
+
+
+
+                    <!-- Imagen Sexto Libro -->
+                    <img src="{% static 'AppBookeria/img/6principito.png' %}" alt="Image" class="rounded-md">
+                </div>
+                <!-- /Contenedor 2: SEXTO LIBRO -->
+
+
+
+
+                <!-- Contenedor 3: SÉPTIMO LIBRO -->
+                <div class="flex items-start justify-end mb-6 tm-menu-item-2">
+
+                    <!-- contenedor: Detalle Séptimo Libro -->
+                    <div class="text-right mr-6">
+
+
+                        <!-- Título Séptimo Libro -->
+                        <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">
+                            BEYOND THE STORY
+                        </h3>
+
+
+                        <!-- c1 descripcion: autor Séptimo Libro -->
+                        <div class="text-white text-md sm:text-lg font-light mb-1">
+                            Myeongseok Kang
+                        </div>
+
+                        <!-- c2 descripcion: precio Séptimo Libro -->
+                        <div class="text-white text-md sm:text-lg font-light">
+                            Precio: $6000 ARS
+                        </div>
+
+
+                        <!-- contenedor: "Botón" Comprar -->
+                        <div class="" style="margin-top: 0.5em; color: white;">
+                            <a href="{% url 'Comprar7' %}" class="linkear" style="background-color: #ca8642; padding: 0.5em;">
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /contenedor: Detalle Séptimo Libro -->
+
+
+                    <!-- Imagen Séptimo Libro -->
+                    <img src="{% static 'AppBookeria/img/7beyond.png' %}" alt="Image" class="rounded-md">
+                </div>
+                <!-- /Contenedor 3: SÉPTIMO LIBRO -->
+
+
+
+
+                <!-- Contenedor 3: OCTAVO LIBRO -->
+                <div class="flex items-start justify-end mb-6 tm-menu-item-2">
+
+                    <!-- contenedor: Detalle Octavo Libro -->
+                    <div class="text-right mr-6">
+
+                        <!-- Título Octavo Libro -->
+                        <h3 class="text-lg sm:text-xl tm-text-yellow mb-1">
+                            EL DIARIO DE ANA FRANK
+                        </h3>
+
+
+                        <!-- c1 descripcion: autor Octavo Libro -->
+                        <div class="text-white text-md sm:text-lg font-light">
+                            Anne Frank
+                        </div>
+
+                        <!-- c2 descripcion: precio Octavo Libro -->
+                        <div class="text-white text-md sm:text-lg font-light">
+                            Precio: $1000 ARS
+                        </div>
+
+
+
+                        <!-- contenedor: "Botón" Comprar -->
+                        <div class="" style="margin-top: 0.5em; color: white;">
+                            <a href="{% url 'Comprar8' %}" class="linkear" style="background-color: #ca8642; padding: 0.5em;">
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /contenedor: Detalle Octavo Libro -->
+
+
+
+                    <!-- Imagen Octavo Libro -->
+                    <img src="{% static 'AppBookeria/img/8ana.png' %}" alt="Image" class="rounded-md">
+
+
+                </div>
+                <!-- /Contenedor 3: OCTAVO LIBRO -->
+
+            </div>
+            <!-- /2[Contenedor]: "Tarjeta" Libros -->
+
+        </div>
+
+
+
+
+        <!-- Sub contenedor: "BOTÓN" TODOS LOS LIBROS -->
+        <div class="text-center text-4xl">
+            <a href="{% url 'Libros' %}" class="bg-white py-6 inline-block rounded-md books"
+                style="background-color: rgba(0,0,0,0.7); color: #cc9966; padding: 0.5em 0.9em; cursor: pointer;">
+                Todos los libros...
+            </a>
+        </div>
+
+
+
+        
+        <!-- Sub contenedor: link ir una sección posterior -->
+        <div class="text-center text-xl mt-5" style="margin-top: 3rem;">
+            <a href="#about" class="py-6 inline-block rounded-md books"
+                style="background-color: rgba(0,0,0,0.7); color: #cc9966; padding: 0.5em 0.9em; cursor: pointer;">
+                Ir una secci&oacute;n posterior...
+            </a>
+        </div>
+
+
+
+        
+        <!-- Sub contenedor: link ir al principio -->
+        <div class="text-center text-2xl mt-5">
+            <a href="#intro" class="py-6 inline-block rounded-md books"
+                style="background-color: rgba(0,0,0,0.7); color: #cc9966; padding: 0.5em 0.9em; cursor: pointer;">
+                Ir al principio...
+            </a>
+        </div>
+
+    </div>
+
+</div>
+<!-- /Primera sección: libros -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- Sección Acerca De -->
+<div id="about" class="parallax-window" data-parallax="scroll"
+    data-image-src="{% static 'AppBookeria/img/libdiv01.png' %}">
+
+    <!-- Contenedor: ??? -->
+    <div class="container mx-auto tm-container py-24 sm:py-48">
+
+        <!-- Contenedor principal: ACERCA DE -->
+        <div class="tm-item-container sm:ml-auto sm:mr-12 mx-auto sm:px-0 px-4">
+
+            <!-- contenedor: tarjeta Acerca de -->
+            <div class="bg-white bg-opacity-80 p-12 pb-14 rounded-xl mb-5">
+
+                <!-- Subtítulo Acerca de -->
+                <h2 class="mb-6 tm-text-green text-4xl font-medium">
+                    Sobre nuestra tienda
+                </h2>
+
+                <!-- Párrafo principal -->
+                <p class="mb-6 text-base leading-8">
+                    Bookeria es una pila de estantes, uno arriba del otro y al lado donde reinan libros en los más
+                    diversos idiomas del mundo. Nuestra empresa se identifica con la difusión del conocimiento, el
+                    entretenimiento y la contribución para una mejor comunicación entre las diferentes culturas. De este
+                    modo facilita el aprendizaje de las lenguas extranjeras. Es por ello que nos eligen las
+                    instituciones, colegios y universidades de la provincia y el país. Y también llegamos al público que
+                    sale en busca de una novela, una guía o su libro favorito.
+
+                    <br>
+                    Nuestra misión es promover el acceso a contenidos culturales, educativos y recreativos en diferentes
+                    soportes e idiomas. La visión es ser una empresa líder y referente en el mercado argentino por
+                    calidad y servicios, productos e innovación.
+                </p>
+
+
+                <!-- Párrafo secundario -->
+                <p class="text-base leading-8">
+                    Si quieres
+                    <a rel="nofollow" href="#no-implementado">ofrecernos apoyo</a>,
+                    por favor has una donaci&oacute;n v&iacute;a PayPal, eso ser&iacute;a muy gentil de tu parte. Otra
+                    forma es contarles a tus amigos sobre nuestro sitio web. Muchas gracias.
+                </p>
+
+            </div>
+
+
+            <!-- "Botón" Contactar -->
+            <a href="#contact" class="inline-block tm-bg-green transition text-white text-xl pt-3 pb-4 px-8 rounded-md">
+                <i class="far fa-comments mr-4"></i>
+                Contactar
+            </a>
+
+        </div>
+        <!-- /Contenedor principal: ACERCA DE -->
+
+
+
+
+        <!-- Sub contenedor: link ir una sección anterior -->
+        <div class="text-center text-xl">
+            <a href="#menu" class="py-6 inline-block rounded-md books mt-5"
+                style="background-color: rgba(0,0,0,0.7); color: #cc9966; padding: 0.5em 0.9em; cursor: pointer;">
+                Ir una secci&oacute;n anterior...
+            </a>
+        </div>
+
+
+
+        
+        <!-- Sub contenedor: link ir una sección posterior -->
+        <div class="text-center text-xl mt-5">
+            <a href="#contact" class="py-6 inline-block rounded-md books"
+                style="background-color: rgba(0,0,0,0.7); color: #cc9966; padding: 0.5em 0.9em; cursor: pointer;">
+                Ir una secci&oacute;n posterior...
+            </a>
+        </div>
+
+
+
+        
+        <!-- Sub contenedor: link ir al principio -->
+        <div class="text-center text-3xl mt-5" style="margin-top: 2rem;">
+            <a href="#intro" class="py-6 inline-block rounded-md books"
+                style="background-color: rgba(0,0,0,0.7); color: #cc9966; padding: 0.5em 0.9em; cursor: pointer;">
+                Ir al principio...
+            </a>
+        </div>
+
+
+        
+    </div>
+    <!-- /Contenedor: ??? -->
+    
+</div>
+<!-- /Sección Acerca De -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- Sección Contacto -->
+<div id="contact" class="parallax-window relative" data-parallax="scroll"
+    data-image-src="{% static 'AppBookeria/img/libdiv02.png' %}">
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="container mx-auto tm-container pt-24 pb-48 sm:py-48">
+
+        <!-- Contenedor: CONTACTO -->
+        <div class="flex flex-col lg:flex-row justify-around items-center lg:items-stretch">
+
+            <!-- Contenedor: Mapa -->
+            <div class="flex-1 rounded-xl px-10 py-12 m-5 bg-white bg-opacity-80 tm-item-container">
+
+                <!-- Subtítulo Mapa -->
+                <h2 class="text-3xl mb-6 tm-text-green">
+                    Cont&aacute;ctanos
+                </h2>
+
+                <!-- Párrafo Mapa -->
+                <p class="mb-6 text-lg leading-8">
+                    Praesent tellus magna, consectetur sit amet volutpat eu, pulvinar vitae sem.
+                    Sed ultrices. bg white 80% alpha. btn #066
+                </p>
+
+
+                <!-- Párrafo Contactos -->
+                <p class="mb-10 text-lg">
+
+                    <span class="block mb-2">
+                        Tel:
+                        <a href="#010-020-0340" class="hover:text-yellow-600 transition">010-020-0340</a>
+                    </span>
+
+                    <span class="block">
+                        Email:
+                        <a href="#bookeria@hotmail.com" class="hover:text-yellow-600 transition">bookeria@outlook.com</a>
+                    </span>
+                    
+                </p>
+
+
+
+                <!-- contenedor Mapa -->
+                <div class="text-center">
+                    <a href="https://www.google.com/maps" target="_blank"
+                        class="inline-block text-white text-2xl pl-10 pr-12 py-6 rounded-lg transition tm-bg-green">
+                        <i class="fas fa-map-marked-alt mr-8"></i>
+                        Open Maps
+                    </a>
+                </div>
+
+            </div>
+
+
+
+            <!-- Contenedor: Formulario Envíanos un mensaje (ADORNO) -->
+            <div class="flex-1 rounded-xl p-12 pb-14 m-5 bg-black bg-opacity-50 tm-item-container">
+                <form action="" class="text-lg">
+
+                    <input type="text" name="name"
+                        class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold"
+                        placeholder="Nombre"/>
+
+                    <input type="email" name="email"
+                        class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold"
+                        placeholder="Correo"/>
+
+                    <textarea rows="6" name="message"
+                        class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold"
+                        placeholder="Mensaje..."></textarea>
+
+                    <div class="text-right">
+                        <button type="submit" class="text-white hover:text-yellow-500 transition">
+                            Enviar
+                        </button>
+                    </div>
+
+                </form>
+                
+            </div>
+            <!-- /Contenedor: Formulario Envíanos un mensaje -->
+            
+
+        </div>
+
+
+        <!-- Sub contenedor: link ir una sección anterior -->
+        <div class="text-center text-2xl">
+            <a href="#about" class="py-6 inline-block rounded-md books mt-5"
+                style="background-color: rgba(0,0,0,0.7); color: #cc9966; padding: 0.5em 0.9em; cursor: pointer;">
+                Ir una secci&oacute;n anterior...
+            </a>
+        </div>
+        
+        <!-- Sub contenedor: link ir al principio -->
+        <div class="text-center text-3xl mt-5" style="margin-top: 2rem;">
+            <a href="#intro" class="py-6 inline-block rounded-md books"
+                style="background-color: rgba(0,0,0,0.7); color: #cc9966; padding: 0.5em 0.9em; cursor: pointer;">
+                Ir al principio...
+            </a>
+        </div>
+
+
+    </div>
+    <!-- /CONTENEDOR PRINCIPAL -->
+    
+
+</div>
+<!-- /Sección Contacto -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- JAVASCRIPT -->
+<script>
+
+    function checkAndShowHideMenu() {
+        if (window.innerWidth < 768) {
+            $('#tm-nav ul').addClass('hidden');
+        } else {
+            $('#tm-nav ul').removeClass('hidden');
+        }
+    }
+
+    $(function () {
+        var tmNav = $('#tm-nav');
+        tmNav.singlePageNav();
+
+        checkAndShowHideMenu();
+        window.addEventListener('resize', checkAndShowHideMenu);
+
+        $('#menu-toggle').click(function () {
+            $('#tm-nav ul').toggleClass('hidden');
+        });
+
+        $('#tm-nav ul li').click(function () {
+            if (window.innerWidth < 768) {
+                $('#tm-nav ul').addClass('hidden');
+            }
+        });
+
+        $(document).scroll(function () {
+            var distanceFromTop = $(document).scrollTop();
+
+            if (distanceFromTop > 100) {
+                tmNav.addClass('scroll');
+            } else {
+                tmNav.removeClass('scroll');
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+</script>
+
+{% endblock %}

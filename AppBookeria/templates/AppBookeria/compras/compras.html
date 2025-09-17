@@ -1,0 +1,169 @@
+<!-- PÁGINA COMPRAS (navbar) -->
+
+
+
+
+
+
+<!-- HERENCIA DE TEMPLATES: padre.html -->
+{% extends "AppBookeria/padre.html" %}
+
+{% load static %} <!-- necesario para cargar archivos estáticos como css, imágenes, etc -->
+
+
+
+<!-- BLOQUE VENTANA (cambiar título de la ventana) -->
+{% block ventana %}
+    Compras
+{% endblock %}
+
+
+
+
+<!-- BLOQUE TITLE (cambiar título de la página) -->
+{% block title %}
+
+<!-- Contenedor: TÍTULO DE LA PÁGINA (encabezado) -->
+<div class="bg-black bg-opacity-70 p-12 mb-5 text-center">
+
+    <!-- Título -->
+    <h1 class="text-white text-5xl tm-logo-font mb-5">
+        Tus compras
+    </h1>
+
+</div>  
+
+
+
+
+<!-- Contenedor: párrafo introductorio a la página -->
+<div class="bg-black bg-opacity-70 p-10 mb-5">
+
+    <!-- Párrafo -->
+    <p class="text-white leading-8 text-sm font-light">
+        El sistema -COMPRAS- online aun est&aacute; en desarrollo. Atentos a nuevos cambios a futuro.
+    </p>
+
+</div>
+
+
+
+<!-- Contenedor: Link Explorar para acceder a la sección más rápido -->
+<div class="text-center">
+
+    <!-- Sub contenedor -->
+    <div class="inline-block">
+
+        <!-- Link -->
+        <a href="#menu" class="flex justify-center items-center bg-black bg-opacity-70 py-6 px-8 rounded-lg font-semibold tm-text-2xl tm-text-gold hover:text-gray-200 transition">
+            <i class="fas mr-3"></i>
+            <span>Explorar...</span>                        
+        </a>
+
+    </div>
+    <!-- /Sub contenedor -->
+
+</div> 
+{% endblock %}
+<!-- --------------------------------------- -->
+
+
+
+
+
+<!-- BLOQUE SECTION1 (sección después del NAVBAR) -->
+{% block section1 %}
+
+
+<!-- Contenedor principal -->
+<div id="menu" class=" py-1" data-parallax="scroll" data-image-src="{% static 'AppBookeria/img/libdiv02.png' %}">
+
+    <!-- Sub contenedor -->
+    <div class="container mx-auto py-24 sm:py-48" style="width: 800em; color: white;">
+
+        <!-- Sub contenedor -->
+        <div class="mb-16 px-4 bg-white py-4 rounded-md mx-auto" style="width: 35em;">
+
+            <!-- Título -->
+            <h1 class="px-4 text-4xl tm-text-brown font-semibold" style="width: 13em; text-decoration: underline #544639;">
+                Sistema BASE DE DATOS
+            </h1>
+
+
+            <!-- Párrafo con link -->
+            <p class="tm-text-brown text-2xl py-2 mt-5 font-medium">
+                Registrar una compra...
+                <a href="{% url 'RegistrarCompra' %}" class="px-4 al" style="background-color: #ca8642;">
+                    Ir
+                </a>
+            </p>
+
+
+            <!-- Párrafo con link -->
+            <p class="tm-text-brown text-2xl py-2 mt-5 font-medium">
+                Buscar compras por usuario...
+                <a href="{% url 'BuscarCompra' %}" class="px-4 al" style="background-color: #ca8642;">
+                    Ir
+                </a>
+            </p>
+
+
+            <!-- Párrafo con link -->
+            <p class="tm-text-brown text-2xl py-2 mt-5 font-medium">
+                Ver compras registradas...
+                <a href="{% url 'ListaCompras' %}" class="px-4 al" style="background-color: #ca8642;">
+                    Ir
+                </a>
+            </p>
+
+
+            <!-- Párrafo con link -->
+            <p class="tm-text-brown text-2xl py-2 mt-5 font-medium">
+                Registrar un usuario...
+                <a href="{% url 'RegistroUsuario' %}" class="px-4 al" style="background-color: #ca8642;">
+                    Ir
+                </a>
+            </p>
+
+
+            <!-- Párrafo con link -->
+            <p class="tm-text-brown text-2xl py-2 mt-5 font-medium">
+                Buscar usuario...
+                <a href="{% url 'BuscarUsuario' %}" class="px-4 al" style="background-color: #ca8642;">
+                    Ir
+                </a>
+            </p>
+            
+
+            <!-- Párrafo con link -->
+            <p class="tm-text-brown text-2xl py-2 mt-5 font-medium">
+                Ver usuarios registrados...
+                <a href="{% url 'ListaUsuarios' %}" class="px-4 al" style="background-color: #ca8642;">
+                    Ir
+                </a>
+            </p>
+
+        </div>
+        <!-- /Sub contenedor: LINK -->
+
+
+
+
+        <!-- Sub contenedor: link ir al principio -->
+        <div class="text-center text-3xl mt-5">
+            <a href="#intro" class="py-6 inline-block rounded-md books"
+                style="background-color: rgba(0,0,0,0.7); color: #cc9966; padding: 0.5em 0.9em; cursor: pointer;">
+                Ir al principio...
+            </a>
+        </div>
+        
+
+
+    </div>
+    <!-- /Sub contenedor -->
+
+
+</div>
+<!-- /Contenedor principal -->
+
+{% endblock %}

@@ -1,0 +1,226 @@
+<!-- PÁGINA BASE, MODELO A HEREDAR -->
+
+<!DOCTYPE html>
+
+{% load static %} <!-- necesario para cargar imágenes, archivos css, etc -->
+
+<html lang="en">
+    <head>
+
+        <!-- Etiquetas meta -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <!-- Etiqueta título de ventana -->
+        
+        <!-- BLOQUE VENTANA (cambia en cada página y describe el título de la misma) -->
+        <title>
+
+            {% block ventana %}
+            {% endblock %}
+
+        </title>
+
+
+        <!-- Etiqueta css: MIS ESTILOS NO TOCAR -->
+        <style>
+
+
+            /* botón login */
+            .but:hover {
+                background-color: #cc9966;
+                color: black !important;
+                box-sizing: border-box;
+            }
+
+
+
+            /* botón Comprar */
+            .linkear:hover {
+                color: black !important;
+                text-decoration: underline black !important;
+            }
+
+
+
+            /* botón Todos los libros */
+            .books:hover {
+                background-color: rgba(0, 0, 0, 1.0) !important;
+                color: #ffffff !important;
+            }
+
+
+
+            /* link IR */
+            .al:hover {
+                background-color: #544639 !important;
+            }
+        </style>
+
+
+
+
+        <!-- Etiquetas link -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'AppBookeria/css/all.min.css' %}"> <!-- fontawesome -->
+        <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+        <link rel="stylesheet" href="{% static 'AppBookeria/css/tailwind.css' %}">
+        <link rel="stylesheet" href="{% static 'AppBookeria/css/tooplate-antique-cafe.css' %}">
+        <link rel="stylesheet" href="{% static 'AppBookeria/css/mystyle.css' %}">
+        <link rel="icon" type="image/x-icon" href="{% static 'AppBookeria/img/icon.ico' %}">
+    
+    <!--
+
+    Tooplate 2126 Antique Cafe
+
+    https://www.tooplate.com/view/2126-antique-cafe
+
+    -->
+    </head>
+
+
+
+
+    <body>    
+
+        <!-- Contenedor: NAVBAR -->
+        <div id="intro" class="parallax-window" data-parallax="scroll" data-image-src=
+        "{% static 'AppBookeria/img/libwall02.jpg' %}">
+
+
+            <!-- NAVBAR -->
+            <nav id="tm-nav" class="fixed w-full" style="background-color: rgba(0, 0, 0, 0.7);">
+
+                <!-- Sub contenedor -->
+                <div class="tm-container mx-auto px-2 md:py-6 text-right">
+
+
+                    <!-- por defecto: NO TOCAR -->
+                    <button class="md:hidden py-2 px-2" id="menu-toggle">
+                        <i class="fas fa-2x fa-bars tm-text-gold">
+                        </i>
+                    </button>
+
+
+                    <!-- Etiqueta ul (lista) -->
+                    <ul class="mb-3 md:mb-0 text-2xl font-normal flex justify-end flex-col md:flex-row">
+
+                        <!-- Item lista -->
+                        <li class="inline-block mb-4 mx-4">
+
+                            <!-- Link INICIO -->
+                            <a href="{% url 'Inicio' %}" class="tm-text-gold py-1 md:py-3 px-4">
+                                Inicio
+                            </a>
+                        </li>
+
+
+                        <!-- Item lista -->
+                        <li class="inline-block mb-4 mx-4">
+
+                            <!-- Link LIBROS -->
+                            <a href="{% url 'Libros' %}" class="tm-text-gold py-1 md:py-3 px-4">
+                                Libros
+                            </a>
+                        </li>
+
+
+                        <!-- Item lista -->
+                        <li class="inline-block mb-4 mx-4">
+
+                            <!-- Link OFERTAS -->
+                            <a href="{% url 'Ofertas' %}" class="tm-text-gold py-1 md:py-3 px-4">
+                                Ofertas
+                            </a>
+                        </li>
+
+
+                        <!-- Item lista -->
+                        <li class="inline-block mb-4 mx-4">
+
+                            <!-- Link COMPRAS -->
+                            <a href="{% url 'Compras' %}" class="tm-text-gold py-1 md:py-3 px-4">
+                                Compras
+                            </a>
+                        </li>
+
+
+
+                        <!-- Item lista -->
+                        <li>
+
+                            <!-- "Botón" LOGIN -->
+                            <a href="{% url 'Login' %}" class="but" style="color: white; margin-left: 0.9em; outline: 2px solid #cc9966; padding: 0.1em 0.80em; font-family: 'Courier New', Courier, monospace;">
+                                Login
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    
+                </div>
+                <!-- /Sub contenedor -->
+                
+            </nav>
+            <!-- /NAVBAR -->
+
+
+
+
+            <!-- Contenedor: ENCABEZADO -->
+            <div class="container mx-auto px-2 tm-intro-width">
+
+                <!-- Sub contenedor -->
+                <div class="sm:pb-60 sm:pt-48 py-20">
+                    
+                    <!-- BLOQUE TITLE (cambia en cada página y describe el título de la misma) -->
+                    {% block title %}
+                    {% endblock %}
+
+                </div>
+                <!-- /Sub contenedor -->
+
+            </div>
+            <!-- /Contenedor: ENCABEZADO -->
+
+
+        </div>
+        <!-- /Contenedor: NAVBAR -->
+
+
+
+        <!-- BLOQUE SECTION1 (cambia en cada página, para visualizar elementos = secciones) -->
+        {% block section1 %}
+        
+        {% endblock %}
+        
+
+
+
+        <!-- PIE DE PÁGINA (footer) -->
+        <footer class="bottom-0 left-0 w-full bg-black">
+
+            <!-- Sub contenedor -->
+            <div class="text-white container mx-auto tm-container p-8 text-lg flex flex-col md:flex-row justify-between">
+                <span>Copyright 2023 Bookeria. All rights reserved.</span>
+                <span class="mt-5 md:mt-0">Design: <a href="https://www.tooplate.com" target="_blank"> Free Css Templates - Tooplate</a></span>
+            </div>                
+        </footer>
+
+
+
+
+
+        <!-- ARCHIVOS PARA CARGAR LOS ARCHIVOS HTML, NO TOCAR!!! -->
+        <script src="{% static 'AppBookeria/js/jquery-3.6.0.min.js' %}"></script>
+        <script src="{% static 'AppBookeria/js/parallax.min.js' %}"></script>
+        <script src="{% static 'AppBookeria/js/jquery.singlePageNav.min.js' %}"></script>
+
+
+    </body>
+
+    
+</html>

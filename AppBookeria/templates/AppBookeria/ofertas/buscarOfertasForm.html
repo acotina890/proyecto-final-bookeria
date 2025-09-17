@@ -1,0 +1,88 @@
+<!-- PÁGINA PARA BUSCAR LIBROS CON DESCUENTO (ofertas) -->
+
+
+
+
+
+
+<!-- HERENCIA DE TEMPLATES: padre.html -->
+{% extends "AppBookeria/padre.html" %}
+
+{% load static %} <!-- necesario para cargar archivos estáticos como css, imágenes, etc -->
+
+
+
+
+<!-- BLOQUE VENTANA (cambiar título de la ventana) -->
+{% block ventana %}
+    B&uacute;squeda ofertas
+{% endblock %}
+
+
+
+
+<!-- BLOQUE TITLE (cambiar título de la página) -->
+{% block title %}
+
+<!-- Contenedor: TÍTULO DE LA PÁGINA (encabezado) -->
+<div class="bg-black bg-opacity-70 p-12 mb-5 text-center">
+
+    <!-- Título -->
+    <h1 class="text-white text-5xl tm-logo-font mb-5">
+        Buscar ofertas
+    </h1>
+
+    <!-- Párrafo con links -->
+    <p class="text-white leading-8 text-sm font-light">
+        ¿Quieres agregar un libro en particular? Haz click
+        <a rel="nofollow" href="{% url 'AgregarLibros' %}">aqu&iacute;</a>
+
+        <br> <br>
+
+        ¿Quieres realizar una b&uacute;squeda por t&iacute;tulo? Haz click
+        <a rel="nofollow" href="{% url 'BuscarTitulo' %}">aqu&iacute;</a>
+
+        <br>
+
+        ¿Quieres realizar una b&uacute;squeda por autor? Haz click
+        <a rel="nofollow" href="{% url 'BuscarAutor' %}">aqu&iacute;</a>
+
+        <br>
+
+        ¿Quieres realizar una b&uacute;squeda por editorial? Haz click
+        <a rel="nofollow" href="{% url 'BuscarEditorial' %}">aqu&iacute;</a>
+    </p>
+    
+</div>
+
+
+
+<!-- Contenedor: formulario para buscar libros -->
+<div class="flex-1 rounded-xl p-12 pb-14 m-5 bg-black bg-opacity-70 tm-item-container mx-auto">
+
+    <!-- Formulario -->
+    <form action="" method="POST" class="text-lg">
+
+        {% csrf_token %}
+
+        <!-- Párrafo -->
+        <p class="tm-text-gold leading-8 text-sm font-medium">
+            (Puede ser una letra, una palabra o frase)
+        </p>
+
+        <!-- Entrada de libro (título) -->
+        <input type="text" name="titulo" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Titulo">
+
+
+        <!-- Contenedor: "Botón" Buscar -->
+        <div class="text-right">
+
+            <!-- Input de envío de datos -->
+            <input type="submit" value="Buscar" class="text-right text-white hover:text-yellow-500 transition" style="background-color: rgba(0,0,0,0.0); cursor: pointer;">   
+        </div>
+        
+    </form>
+    
+</div>
+{% endblock %}
+<!-- --------------------------------------- -->

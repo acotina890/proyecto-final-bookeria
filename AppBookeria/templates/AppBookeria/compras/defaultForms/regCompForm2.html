@@ -1,0 +1,85 @@
+<!-- PÁGINA PARA REGISTRAR COMPRAS (base de datos) -->
+
+
+
+
+
+
+<!-- HERENCIA DE TEMPLATES: padre.html -->
+{% extends "AppBookeria/padre.html" %}
+
+{% load static %} <!-- necesario para cargar la página base -->
+
+
+
+<!-- BLOQUE VENTANA (cambiar título de la ventana) -->
+{% block ventana %}
+    Registrar compra
+{% endblock %}
+
+
+
+
+<!-- BLOQUE TITLE (cambiar título de la página) -->
+{% block title %}
+
+<!-- Contenedor: TÍTULO DE LA PÁGINA (encabezado) -->
+<div class="bg-black bg-opacity-70 p-12 mb-5 text-center">
+
+    <!-- Título -->
+    <h1 class="text-white text-5xl tm-logo-font mb-5">
+        Registrar compra
+    </h1>
+
+    <!-- Párrafo con link: REDIRECCIONAR A PÁGINAS DE BÚSQUEDA -->
+    <p class="text-white leading-8 text-sm font-light">
+        ¿Quieres realizar una b&uacute;squeda de compras por usuario?  Haz clic
+        <a rel="nofollow" href="{% url 'BuscarCompra' %}">aqu&iacute;</a>
+
+    </p>
+    
+</div>
+
+
+
+<!-- Contenedor: formulario para registrar compras -->
+<div class="flex-1 rounded-xl p-12 pb-14 m-5 bg-black bg-opacity-70 tm-item-container mx-auto">
+
+    <!-- Formulario -->
+    <form action="" method="POST" class="text-lg">
+        
+        {% csrf_token %}
+
+        
+        <!-- Entrada de usuario -->
+        <input type="text" name="usuario" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Usuario" maxlength="100"/>
+        
+        <!-- Entrada de titulo libro -->
+        <input type="text" name="libro" value="La Crisis de la Narración" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Titulo del libro" maxlength="200"/>
+        
+        <!-- Entrada de oferta -->
+        <input type="text" name="oferta" value="0%" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Oferta (incluir simbolo porcentaje)" maxlength="50"/>
+        
+        <!-- Entrada de precio -->
+        <input type="text" name="precio" value="$4900 (ARS)" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Precio" maxlength="100"/>
+        
+        
+        <!-- Entrada de método de pago -->
+        <input type="text" name="pago" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="M&eacute;todo de pago" maxlength="50"/>
+
+        <!-- Entrada fecha de compra -->
+        <input type="text" name="fecha" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Fecha" maxlength="50">
+
+
+        <!-- Contenedor: "Botón" Comprar -->
+        <div class="text-right">
+            
+            <!-- Input de envío de datos -->
+            <input type="submit" value="Registrar" class="text-right text-white hover:text-yellow-500 transition" style="background-color: rgba(0,0,0,0.0); cursor: pointer;">   
+        </div>
+        
+    </form>
+    
+</div>
+{% endblock %}
+<!-- --------------------------------------- -->
