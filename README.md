@@ -1,9 +1,7 @@
-# Proyecto Final Coder House - Python
+# Bookeria
+#### Coderhouse - Python orientado a web
 #### Comisión: 47770
-#### Alumno: Laura Roldán
-
-## Nombre del Proyecto
-Bookeria
+#### Alumno: Agostina Yarbande
 
 ## Versión
 1.0
